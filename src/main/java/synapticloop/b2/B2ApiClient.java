@@ -146,6 +146,15 @@ public class B2ApiClient {
 	}
 
 	/**
+	 * Get the minimum large file upload part size
+	 *
+	 * @return the minimum size for upload part of a file
+	 */
+	public int getMinumumPartSize() {
+		return b2AuthorizeAccountResponse.getMinimumPartSize();
+	}
+
+	/**
 	 * Release all resources from the connection pool.
 	 *
 	 * @throws IOException if the client could not be closed
