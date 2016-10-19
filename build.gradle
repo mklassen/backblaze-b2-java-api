@@ -5,8 +5,10 @@ plugins {
 	id "maven-publish"
 	id 'net.saliman.cobertura' version '2.3.2'
 	id "com.jfrog.bintray" version "1.7"
+/*
 	id 'co.riiid.gradle' version '0.4.2'
 	id 'synapticloop.documentr' version '2.6.1'
+*/
 	id 'com.github.ben-manes.versions' version '0.13.0'
 }
 
@@ -16,8 +18,8 @@ description = """A java api for the truly excellent backblaze b2 storage service
 
 version = '2.1.3'
 
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
 
 
 
@@ -142,6 +144,7 @@ bintray {
 
 }
 
+/*
 github {
 	owner = group
 	repo = archivesBaseName
@@ -154,3 +157,4 @@ github {
 		'build/libs/' + archivesBaseName + '-' + version + '.jar'
 	]
 }
+*/

@@ -41,7 +41,7 @@ public final class B2ListBucketsResponse extends BaseB2Response {
 	public B2ListBucketsResponse(final String json) throws B2ApiException {
 		super(json);
 
-		buckets = new ArrayList<>();
+		buckets = new ArrayList<B2BucketResponse>();
 		JSONArray optJSONArray = this.readObjects(B2ResponseProperties.KEY_BUCKETS);
 		for(int i = 0; i < optJSONArray.length(); i++) {
 			buckets.add(new B2BucketResponse(optJSONArray.optJSONObject(i)));

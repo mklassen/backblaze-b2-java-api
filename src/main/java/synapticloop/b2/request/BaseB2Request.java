@@ -56,17 +56,17 @@ public abstract class BaseB2Request {
 	public static final String VALUE_APPLICATION_X_WWW_FORM_URLENCODED = "application/x-www-form-urlencoded";
 	public static final String VALUE_UTF_8 = "UTF-8";
 
-	private final Map<String, String> requestHeaders = new HashMap<>();
+	private final Map<String, String> requestHeaders = new HashMap<String, String>();
 
 	/**
 	 * Query parameters for request URI
 	 */
-	private final Map<String, String> requestParameters = new HashMap<>();
+	private final Map<String, String> requestParameters = new HashMap<String, String>();
 
 	/**
 	 * POST data key value pairs
 	 */
-	private final Map<String, Object> requestBodyData = new HashMap<>();
+	private final Map<String, Object> requestBodyData = new HashMap<String, Object>();
 
 	private final CloseableHttpClient client;
 

@@ -24,7 +24,9 @@ public class QuickExampleMain {
 
 			// upload a file
 			b2ApiClient.uploadFile(createPrivateBucket.getBucketId(), "myfile.txt", new File("/tmp/temporary-file.txt"));
-		} catch(B2ApiException | IOException ex) {
+      } catch(B2ApiException ex) {
+			ex.printStackTrace();
+      } catch(IOException ex) {
 			ex.printStackTrace();
 		}
 	}
