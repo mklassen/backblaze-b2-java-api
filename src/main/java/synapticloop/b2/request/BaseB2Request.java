@@ -258,8 +258,12 @@ public abstract class BaseB2Request {
 			return httpResponse;
 		}
 
-		throw new B2ApiException(EntityUtils.toString(httpResponse.getEntity()), new HttpResponseException(
+		final B2ApiException failure = new B2ApiException(EntityUtils.toString(httpResponse.getEntity()), new HttpResponseException(
 				httpResponse.getStatusLine().getStatusCode(), httpResponse.getStatusLine().getReasonPhrase()));
+		if(httpResponse.containsHeader(HttpHeaders.RETRY_AFTER)) {
+			throw failure.withRetry(Integer.valueOf(httpResponse.getFirstHeader(HttpHeaders.RETRY_AFTER).getValue()));
+		}
+		throw failure;
 	}
 
 	/**
